@@ -421,6 +421,8 @@ Allow_missing_dependencies       *bool    `json:",omitempty"`
 
 	DeviceKernelHeaders []string `json:",omitempty"`
 
+	TargetSpecificHeaderPath *string `json:",omitempty"`
+
 	ExtraVndkVersions []string `json:",omitempty"`
 
 	NamespacesToExport []string `json:",omitempty"`
