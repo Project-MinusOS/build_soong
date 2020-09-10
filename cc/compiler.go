@@ -365,6 +365,15 @@ func parseCStd(cStdPtr *string) string {
 func (compiler *baseCompiler) compilerFlags(ctx ModuleContext, flags Flags, deps PathDeps) Flags {
 	tc := ctx.toolchain()
 	modulePath := ctx.ModuleDir()
+	additionalIncludeDirs := ctx.DeviceConfig().TargetSpecificHeaderPath()
+	if len(additionalIncludeDirs) > 0 {
+		// devices can have multiple paths in TARGET_SPECIFIC_HEADER_PATH
+		// add -I in front of all of them
+		if (strings.Contains(additionalIncludeDirs, " ")) {
+			additionalIncludeDirs = strings.ReplaceAll(additionalIncludeDirs, " ", " -I")
+		}
+		flags.Local.CommonFlags = append(flags.Local.CommonFlags, "-I" + additionalIncludeDirs)
+	}
 
 	reuseObjs := false
 	if len(ctx.GetDirectDepsWithTag(reuseObjTag)) > 0 {
