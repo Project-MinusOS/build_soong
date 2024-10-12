@@ -65,6 +65,7 @@ func init() {
 	AddNeverAllowRules(createKotlinPluginRule()...)
 	AddNeverAllowRules(createPrebuiltEtcBpDefineRule())
 	AddNeverAllowRules(createAutogenRroBpDefineRule())
+	AddNeverAllowRules(createKotlinPluginRule()...)
 }
 
 // Add a NeverAllow rule to the set of rules to apply.
