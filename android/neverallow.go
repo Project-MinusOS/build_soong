@@ -358,6 +358,7 @@ func createKotlinPluginRule() []Rule {
 	kotlinPluginProjectsAllowedList := []string{
 		"external/kotlinc",
 		"tools/strictdeps/kotlin",
+		"vendor/minus/kotlin",
 	}
 
 	return []Rule{
