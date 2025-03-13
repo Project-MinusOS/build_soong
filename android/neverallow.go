@@ -395,6 +395,7 @@ func createPrebuiltEtcBpDefineRule() Rule {
 			"prebuilt_install",
 			"prebuilt_vendor_overlay",
 			"prebuilt_tee",
+			"prebuilt_addon.d",
 		).
 		DefinedInBpFile().
 		Because("module type not allowed to be defined in bp file")
