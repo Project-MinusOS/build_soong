@@ -402,6 +402,7 @@ func createPrebuiltEtcBpDefineRule() Rule {
 			"prebuilt_first_stage_ramdisk",
 			"prebuilt_radio",
 			"prebuilt_gpu",
+			"prebuilt_install",
 			"prebuilt_vendor_overlay",
 			"prebuilt_tee",
 		).
